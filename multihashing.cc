@@ -246,7 +246,7 @@ NAN_METHOD(cryptonight_heavy) {
     info.GetReturnValue().Set(returnValue);
 }
 
-NAN_METHOD(CRYPTONIGHT_PLEX) {
+NAN_METHOD(cryptonight_plex) {
     if (info.Length() < 1) return THROW_ERROR_EXCEPTION("You must provide one argument.");
 
     Local<Object> target = info[0]->ToObject();
