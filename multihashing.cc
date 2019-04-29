@@ -178,7 +178,7 @@ NAN_METHOD(cryptonight) {
     info.GetReturnValue().Set(returnValue);
 }
 
-NAN_METHOD(cryptonight_light) {
+NAN_METHOD(cryptonight_upx) {
     if (info.Length() < 1) return THROW_ERROR_EXCEPTION("You must provide one argument.");
 
     Local<Object> target = info[0]->ToObject();
@@ -493,7 +493,7 @@ class CCryptonightLightAsync : public Nan::AsyncWorker {
         }
 };
 
-NAN_METHOD(cryptonight_light_async) {
+NAN_METHOD(cryptonight_upx_async) {
     if (info.Length() < 2) return THROW_ERROR_EXCEPTION("You must provide at least two arguments.");
 
     Local<Object> target = info[0]->ToObject();
@@ -651,7 +651,7 @@ class CCryptonightPicoAsync : public Nan::AsyncWorker {
         }
 };
 
-NAN_METHOD(CRYPTONIGHT_PLEX_async) {
+NAN_METHOD(cryptonight_plex_async) {
     if (info.Length() < 2) return THROW_ERROR_EXCEPTION("You must provide at least two arguments.");
 
     Local<Object> target = info[0]->ToObject();
@@ -678,12 +678,12 @@ NAN_METHOD(CRYPTONIGHT_PLEX_async) {
 NAN_MODULE_INIT(init) {
     Nan::Set(target, Nan::New("cryptonight").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight)).ToLocalChecked());
     Nan::Set(target, Nan::New("cryptonight_async").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_async)).ToLocalChecked());
-    Nan::Set(target, Nan::New("cryptonight_light").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_light)).ToLocalChecked());
-    Nan::Set(target, Nan::New("cryptonight_light_async").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_light_async)).ToLocalChecked());
+    Nan::Set(target, Nan::New("cryptonight_upx").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_upx)).ToLocalChecked());
+    Nan::Set(target, Nan::New("cryptonight_upx_async").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_upx_async)).ToLocalChecked());
     Nan::Set(target, Nan::New("cryptonight_heavy").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_heavy)).ToLocalChecked());
     Nan::Set(target, Nan::New("cryptonight_heavy_async").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_heavy_async)).ToLocalChecked());
-    Nan::Set(target, Nan::New("CRYPTONIGHT_PLEX").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(CRYPTONIGHT_PLEX)).ToLocalChecked());
-    Nan::Set(target, Nan::New("CRYPTONIGHT_PLEX_async").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(CRYPTONIGHT_PLEX_async)).ToLocalChecked());
+    Nan::Set(target, Nan::New("cryptonight_plex").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_plex)).ToLocalChecked());
+    Nan::Set(target, Nan::New("cryptonight_plex_async").ToLocalChecked(), Nan::GetFunction(Nan::New<FunctionTemplate>(cryptonight_plex_async)).ToLocalChecked());
 }
 
 NODE_MODULE(cryptonight, init)
