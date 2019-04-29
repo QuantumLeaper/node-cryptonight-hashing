@@ -60,7 +60,6 @@ constexpr const uint32_t CRYPTONIGHT_HEAVY_ITER   = 0x40000;
 constexpr const size_t   CRYPTONIGHT_PLEX_MEMORY = 128 * 1024;
 constexpr const uint32_t CRYPTONIGHT_PLEX_MASK   = 0x1FFF0;
 constexpr const uint32_t CRYPTONIGHT_PLEX_ITER   = 0x4000;
-constexpr const uint32_t CRYPTONIGHT_PLEX_ITER   = 0x10000;
 
 
 template<Algo ALGO> inline constexpr size_t cn_select_memory()           { return 0; }
